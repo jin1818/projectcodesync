@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "webcrawler", "webcrawler.vcproj", "{B8C46114-E3AA-4A47-BBCC-91ED2B2E8344}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1F323BCA-8C6B-4DF8-B2ED-EB02651C3E5B} = {1F323BCA-8C6B-4DF8-B2ED-EB02651C3E5B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "webcrawlerdll", "webcrawlerdll\webcrawlerdll.vcproj", "{1F323BCA-8C6B-4DF8-B2ED-EB02651C3E5B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B8C46114-E3AA-4A47-BBCC-91ED2B2E8344}.Debug.ActiveCfg = Debug|Win32
+		{B8C46114-E3AA-4A47-BBCC-91ED2B2E8344}.Debug.Build.0 = Debug|Win32
+		{B8C46114-E3AA-4A47-BBCC-91ED2B2E8344}.Release.ActiveCfg = Release|Win32
+		{B8C46114-E3AA-4A47-BBCC-91ED2B2E8344}.Release.Build.0 = Release|Win32
+		{1F323BCA-8C6B-4DF8-B2ED-EB02651C3E5B}.Debug.ActiveCfg = Debug|Win32
+		{1F323BCA-8C6B-4DF8-B2ED-EB02651C3E5B}.Debug.Build.0 = Debug|Win32
+		{1F323BCA-8C6B-4DF8-B2ED-EB02651C3E5B}.Release.ActiveCfg = Release|Win32
+		{1F323BCA-8C6B-4DF8-B2ED-EB02651C3E5B}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

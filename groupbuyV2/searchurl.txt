@@ -1,0 +1,16 @@
+满座=http://api.manzuo.com/common.xml
+拉手网=http://open.client.lashou.com/v1/hao123
+粉团网=http://www.fentuan.com/api/baidu.php
+24券=http://www.24quan.com/api/alliance.php
+V1团=http://v1tuan.v1.cn/api/baidu.php
+第一团=http://www.onetuan.com/api/baidu.php
+格鲁网=http://www.gelu.com/api/hao123.php
+红包团=http://www.hongbaotuan.com/api/baidu.php
+猛买网=http://www.mengmai.com/api.php
+米奇网=http://www.miqi.cn/xml/apis/lab.api.hao123.xml
+团宝网= http://p5.groupon.cn/xml/city/cityproduct/hao123/ 
+搜旅团=http://t.soulv.com/api/index.php
+团秀网=www.tuanxiu.cn/api/baidu_api.php
+我也团=http://www.woyetuan.com/api/baidu.php
+现在团=http://www.xianzaituan.com/xianzaituan/apihao123.xml 
+一起购=http://www.17xgo.com/api/baidu.php
