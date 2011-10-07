@@ -1,0 +1,11 @@
+<div class="data">
+    <div class="title">
+
+<a class="title" href="<?P?>"><?P?></a>
+<span class="ptBrand"><?P?></span>
+<span class="ptBrand"><?P?></span>
+<span class="bindingAndRelease"><?P?></span>
+</div>
+<div class="newPrice">
+    <strike><?P?></strike><span class="price"> <?P?></span>
+

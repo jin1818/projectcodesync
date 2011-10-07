@@ -1,0 +1,2 @@
+相册列表 http://xalist.photo.qq.com/fcgi-bin/fcg_list_album?uin=173033464
+获取单个相册 http://xaplist.photo.qq.com/fcgi-bin/fcg_list_photo?uin=173033464&albumid=944ede64-7c91-4e09-b9e6-3116fecb05b9

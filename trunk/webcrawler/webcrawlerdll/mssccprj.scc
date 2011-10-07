@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[webcrawlerdll.dsp]
+SCC_Aux_Path = "F:\vss"
+SCC_Project_Name = "$/project/PROJECT/WEBCRAWLER/webcrawlerdll", RXBAAAAA
+
+[webcrawlerdll.vcproj]
+SCC_Aux_Path = "F:\vss"
+SCC_Project_Name = "$/project/PROJECT/WEBCRAWLER/webcrawlerdll", RXBAAAAA

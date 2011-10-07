@@ -1,0 +1,354 @@
+C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Template\ATL\PSESSION.H
+Ln# 0093 		TCHAR szDir[MAX_PATH + 1];
+C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Template\ATL\PSESSION.H
+Ln# 0094 		DWORD cbCurDir = GetCurrentDirectory(MAX_PATH, szDir);
+C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Template\ATL\PSESSION.H
+Ln# 0124 		TCHAR szDir[MAX_PATH + 1];
+C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Template\ATL\PSESSION.H
+Ln# 0125 		DWORD cbCurDir = GetCurrentDirectory(MAX_PATH, szDir);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLAPP.H
+Ln# 0131   #define _MAX_FNAME	_MAX_PATH
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4933 	TCHAR szModule[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4934 	GetModuleFileName(_pModule->GetModuleInstance(), szModule, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4940 		TCHAR szModuleShort[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4941 		int cbShortName = GetShortPathName(szModule, szModuleShort, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4943 		if (cbShortName == _MAX_PATH)
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4975 	TCHAR szModule[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4976 	GetModuleFileName(_pModule->GetModuleInstance(), szModule, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4982 		TCHAR szModuleShort[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4983 		int cbShortName = GetShortPathName(szModule, szModuleShort, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 4985 		if (cbShortName == _MAX_PATH)
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5041 	TCHAR szModule[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5042 	GetModuleFileName(m_hInst, szModule, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5068 					TCHAR szModuleShort[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5069 					int cbShortName = GetShortPathName(szModule, szModuleShort, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5072 					if (cbShortName == _MAX_PATH)
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5924 		TCHAR szModule[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5925 		GetModuleFileName(pM->m_hInst, szModule, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5931 			TCHAR szModuleShort[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5932 			int cbShortName = GetShortPathName(szModule, szModuleShort, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5934 			if (cbShortName == _MAX_PATH)
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5986 	TCHAR szModule[_MAX_PATH+10];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 5987 	GetModuleFileName(pM->m_hInstTypeLib, szModule, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLBASE.H
+Ln# 6046 		OLECHAR szDir[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLCTL.H
+Ln# 2214 		TCHAR szTemp[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLCTL.H
+Ln# 2216 		sz = (LPOLESTR)CoTaskMemAlloc(_MAX_PATH*sizeof(OLECHAR));
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLCTL.H
+Ln# 2221 		if (LoadString(_Module.GetResourceInstance(), idRes, szTemp, _MAX_PATH))
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atldlgs.h
+Ln# 0092 	TCHAR m_szFileName[_MAX_PATH];     // contains full path name after return
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atldlgs.h
+Ln# 0117 		m_ofn.nMaxFile = _MAX_PATH;
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atldlgs.h
+Ln# 0137 			lstrcpyn(m_szFileName, lpszFileName, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atldlgs.h
+Ln# 0370 	TCHAR m_szFolderDisplayName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atldlgs.h
+Ln# 0371 	TCHAR m_szFolderPath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlframe.h
+Ln# 0059 	enum { cchAutoName = MAX_PATH };   // MAX_PATH because this can be set in the wizard generated CMainFrame::ActivatePreviousInstance to a user defined string.
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlmisc.h
+Ln# 2922 template <class T, int t_cchItemLen = MAX_PATH, int t_nFirstID = ID_FILE_MRU_FIRST, int t_nLastID = ID_FILE_MRU_LAST>
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlmisc.h
+Ln# 3281 	TCHAR m_lpszRoot[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlmisc.h
+Ln# 3359 		TCHAR szBuff[MAX_PATH] = { 0 };
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlmisc.h
+Ln# 3360 		if(!GetFileName(szBuff, MAX_PATH))
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlmisc.h
+Ln# 3373 		TCHAR szBuff[MAX_PATH] = { 0 };
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlmisc.h
+Ln# 3374 		if(!GetFilePath(szBuff, MAX_PATH))
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlmisc.h
+Ln# 3422 		_tsplitpath(strFullName, NULL, NULL, strResult.GetBuffer(MAX_PATH), NULL);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\atlmisc.h
+Ln# 3567 		LPCTSTR pstr = _tfullpath(m_lpszRoot, pstrName, MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLWIN.H
+Ln# 1352 		TCHAR szModule[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLWIN.H
+Ln# 1353 		GetModuleFileName(_Module.GetModuleInstance(), szModule, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLWIN.H
+Ln# 1378 		TCHAR szModule[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\ATLWIN.H
+Ln# 1379 		GetModuleFileName(_Module.GetModuleInstance(), szModule, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\STATREG.H
+Ln# 0975 			TCHAR  szValueName[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\STATREG.H
+Ln# 1061 				szKey = (LPTSTR)_alloca(sizeof(TCHAR)*_MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\Include\STATREG.H
+Ln# 1062 			lstrcpyn(szKey, szToken, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\CRT\SRC\STDLIB.H
+Ln# 0171 #define _MAX_PATH   260 /* max. length of full pathname */
+C:\Program Files\Microsoft Visual Studio\VC98\CRT\SRC\STDLIB.H
+Ln# 0177 #define _MAX_PATH   256 /* max. length of full pathname */
+C:\Program Files\Microsoft Visual Studio\VC98\Include\ADVPUB.H
+Ln# 0262     char  szSrcPath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\CLUSAPI.H
+Ln# 1605 //#ifndef MAX_PATH
+C:\Program Files\Microsoft Visual Studio\VC98\Include\CLUSAPI.H
+Ln# 1606 //#define MAX_PATH 260
+C:\Program Files\Microsoft Visual Studio\VC98\Include\CLUSAPI.H
+Ln# 1624     WCHAR           szDeviceName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\CLUSAPI.H
+Ln# 1625     WCHAR           szVolumeLabel[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\CONVDLLC.H
+Ln# 0045         WCHAR lpwszName[MAX_PATH + 1];  // DLL name
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0451     CHAR    tszName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0459     WCHAR   tszName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0479     CHAR    tszName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0498     WCHAR   tszName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0584     WCHAR   wszPath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0650     CHAR    tszInstanceName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0651     CHAR    tszProductName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0658     WCHAR   tszInstanceName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0659     WCHAR   tszProductName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0678     CHAR    tszInstanceName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0679     CHAR    tszProductName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0691     WCHAR   tszInstanceName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0692     WCHAR   tszProductName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0853     CHAR    tszName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\DINPUT.H
+Ln# 0861     WCHAR   tszName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\HTTPEXT.H
+Ln# 0190     CHAR   lpszPath[MAX_PATH]; // Physical path root mapped to
+C:\Program Files\Microsoft Visual Studio\VC98\Include\IMAGEHLP.H
+Ln# 0705     CHAR                        FileName[MAX_PATH];     // symbols file or image name
+C:\Program Files\Microsoft Visual Studio\VC98\Include\MAPIWIN.H
+Ln# 0246 #define MAX_PATH                    260
+C:\Program Files\Microsoft Visual Studio\VC98\Include\MAPIWIN.H
+Ln# 0313     CHAR        cFileName[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\MSCONF.H
+Ln# 0225 	WCHAR szRecDir[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\MSCONF.H
+Ln# 0231 	CHAR  szRecDir[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\MSCONF.H
+Ln# 0298 	WCHAR szFileNameSrc[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\MSCONF.H
+Ln# 0299 	WCHAR szFileNameDest[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\MSCONF.H
+Ln# 0314 	CHAR  szFileNameSrc[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\MSCONF.H
+Ln# 0315 	CHAR  szFileNameDest[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\OLEDLG.H
+Ln# 0318         UINT            cchFile;        // IN: Size of lpszFile buffer: MAX_PATH
+C:\Program Files\Microsoft Visual Studio\VC98\Include\OLEDLG.H
+Ln# 0349         UINT            cchFile;        // IN: Size of lpszFile buffer: MAX_PATH
+C:\Program Files\Microsoft Visual Studio\VC98\Include\OLEDLG.H
+Ln# 0801         WCHAR           szIconExe[MAX_PATH];    // IN: explicit icon source path
+C:\Program Files\Microsoft Visual Studio\VC98\Include\OLEDLG.H
+Ln# 0824         CHAR            szIconExe[MAX_PATH];    // IN: explicit icon source path
+C:\Program Files\Microsoft Visual Studio\VC98\Include\RAS.H
+Ln# 0065     WCHAR    szPhonebook [ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\RAS.H
+Ln# 0082     CHAR     szPhonebook [ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\RAS.H
+Ln# 0615     CHAR        szScript[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\RAS.H
+Ln# 0619     CHAR        szAutodialDll[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\RAS.H
+Ln# 0620     CHAR        szAutodialFunc[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\RAS.H
+Ln# 0694     WCHAR       szScript[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\RAS.H
+Ln# 0698     WCHAR       szAutodialDll[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\RAS.H
+Ln# 0699     WCHAR       szAutodialFunc[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SETUPAPI.H
+Ln# 0325     CHAR  FullTargetName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SETUPAPI.H
+Ln# 0335     WCHAR  FullTargetName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SETUPAPI.H
+Ln# 0514     CHAR              DriverPath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SETUPAPI.H
+Ln# 0527     WCHAR             DriverPath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SETUPAPI.H
+Ln# 0977     CHAR     InfFileName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SETUPAPI.H
+Ln# 0989     WCHAR    InfFileName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHELLAPI.H
+Ln# 0574         CHAR        szDisplayName[MAX_PATH];    // out: display name (or path)
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHELLAPI.H
+Ln# 0582         WCHAR       szDisplayName[MAX_PATH];    // out: display name (or path)
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHLOBJ.H
+Ln# 0751 //   cchMax     [in]  -- Specifies the size of szIconFile (almost always MAX_PATH)
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHLOBJ.H
+Ln# 1403     OLECHAR strNewFile[MAX_PATH];   // New File to view.
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHLOBJ.H
+Ln# 2155         char            cStr[MAX_PATH]; // Buffer to fill in (ANSI)
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHLOBJ.H
+Ln# 2164 //  This function assumes the size of the buffer (MAX_PATH). The pidl
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHLOBJ.H
+Ln# 2899     WCHAR   wszFriendlyName[MAX_PATH];          // Friendly name of component.
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHLOBJ.H
+Ln# 3094     CHAR   cFileName[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\SHLOBJ.H
+Ln# 3110     WCHAR  cFileName[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\STDLIB.H
+Ln# 0151 #define _MAX_PATH   260 /* max. length of full pathname */
+C:\Program Files\Microsoft Visual Studio\VC98\Include\STDLIB.H
+Ln# 0157 #define _MAX_PATH   256 /* max. length of full pathname */
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TLHELP32.H
+Ln# 0144     WCHAR   szExeFile[MAX_PATH];    // Path
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TLHELP32.H
+Ln# 0174     CHAR    szExeFile[MAX_PATH];    // Path
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TLHELP32.H
+Ln# 0243     WCHAR   szExePath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TLHELP32.H
+Ln# 0274     char    szExePath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TSSUTIL.H
+Ln# 0026 void TSS_GetProductDir(TCHAR sz[MAX_PATH]);
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TSSUTIL.H
+Ln# 0031 void TSS_GetSystemFile(TCHAR sz[MAX_PATH]);
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TSSUTIL.H
+Ln# 0052 BOOLEAN TSS_GetAMFilter(TCHAR sz[MAX_PATH]);
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TSSUTIL.H
+Ln# 0053 void TSS_GetDatabaseFile(TCHAR sz[MAX_PATH]);
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TSSUTIL.H
+Ln# 0054 BOOL TSS_GetDatabaseReplacementFile(TCHAR sz[MAX_PATH]);
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TSSUTIL.H
+Ln# 0055 void TSS_GetEPGDatabaseFile(TCHAR sz[MAX_PATH]);
+C:\Program Files\Microsoft Visual Studio\VC98\Include\TSSUTIL.H
+Ln# 0058 BOOLEAN TSS_SetAMFilter(TCHAR sz[MAX_PATH]);
+C:\Program Files\Microsoft Visual Studio\VC98\Include\VDMDBG.H
+Ln# 0252 #define MAX_PATH16      255
+C:\Program Files\Microsoft Visual Studio\VC98\Include\VDMDBG.H
+Ln# 0259     CHAR    FileName[MAX_PATH16+1];         // PathName to executable image
+C:\Program Files\Microsoft Visual Studio\VC98\Include\VDMDBG.H
+Ln# 0266     CHAR    FileName[MAX_PATH16+1];         // Path to executable image
+C:\Program Files\Microsoft Visual Studio\VC98\Include\VDMDBG.H
+Ln# 0276     char    szExePath[MAX_PATH16+1];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\VDMDBG.H
+Ln# 0297     CHAR    FileName[MAX_PATH16];           // Path to executable image
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WINBASE.H
+Ln# 3833     CHAR   cFileName[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WINBASE.H
+Ln# 3850     WCHAR  cFileName[ MAX_PATH ];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WINDEF.H
+Ln# 0052 #define MAX_PATH          260
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WINGDI.H
+Ln# 0590     CHAR   lcsFilename[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WINGDI.H
+Ln# 0602     WCHAR  lcsFilename[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WININET.H
+Ln# 0080 #define INTERNET_MAX_PATH_LENGTH        2048
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WININET.H
+Ln# 0084                                         + INTERNET_MAX_PATH_LENGTH)
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WINNLS.H
+Ln# 0647     CHAR    CodePageName[MAX_PATH];         // code page name (Unicode)
+C:\Program Files\Microsoft Visual Studio\VC98\Include\WINNLS.H
+Ln# 0655     WCHAR   CodePageName[MAX_PATH];         // code page name (Unicode)
+C:\Program Files\Microsoft Visual Studio\VC98\MFC\Include\AFX.H
+Ln# 1612 	TCHAR m_szFullName[_MAX_PATH]; // absolute path name
+C:\Program Files\Microsoft Visual Studio\VC98\MFC\Include\AFXDLGS.H
+Ln# 0181 	TCHAR m_szFileName[_MAX_PATH]; // contains full path name after return
+C:\Program Files\Microsoft Visual Studio\VC98\MFC\Include\AFXODLGS.H
+Ln# 0177 	TCHAR m_szFileName[_MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlapp.h
+Ln# 0216   #define _MAX_FNAME	_MAX_PATH
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atldlgs.h
+Ln# 0096 	TCHAR m_szFileName[_MAX_PATH];     // contains full path name after return
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atldlgs.h
+Ln# 0121 		m_ofn.nMaxFile = _MAX_PATH;
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atldlgs.h
+Ln# 0141 			lstrcpyn(m_szFileName, lpszFileName, _MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atldlgs.h
+Ln# 0375 	TCHAR m_szFolderDisplayName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atldlgs.h
+Ln# 0376 	TCHAR m_szFolderPath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlframe.h
+Ln# 0058 	enum { cchAutoName = MAX_PATH };   // MAX_PATH because this can be set in the wizard generated CMainFrame::ActivatePreviousInstance to a user defined string.
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 2957 template <class T, int t_cchItemLen = MAX_PATH, int t_nFirstID = ID_FILE_MRU_FIRST, int t_nLastID = ID_FILE_MRU_LAST>
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3334 	TCHAR m_lpszRoot[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3413 		TCHAR szBuff[MAX_PATH] = { 0 };
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3414 		if(!GetFileName(szBuff, MAX_PATH))
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3432 		TCHAR szBuff[MAX_PATH] = { 0 };
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3433 		if(!GetFilePath(szBuff, MAX_PATH))
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3483 		_tsplitpath_s(strFullName, NULL, 0, NULL, 0, strResult.GetBuffer(MAX_PATH), MAX_PATH, NULL, 0);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3485 		_tsplitpath(strFullName, NULL, NULL, strResult.GetBuffer(MAX_PATH), NULL);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3633 		LPCTSTR pstr = _tfullpath(m_lpszRoot, pstrName, MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlmisc.h
+Ln# 3635 		LPCTSTR pstr = lstrcpyn(m_lpszRoot, pstrName, MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlwince.h
+Ln# 0689 		DWORD size = MAX_PATH;
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlwince.h
+Ln# 0702 		DWORD size = MAX_PATH;
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlwince.h
+Ln# 2031 	TCHAR m_szPath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\include\atlwince.h
+Ln# 2050 			::lstrcpyn(m_szPath, pszFolder, MAX_PATH - 1);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\BmpView\mainfrm.h
+Ln# 0036 	TCHAR m_szFilePath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\BmpView\mainfrm.h
+Ln# 0380 		TCHAR szFile[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\ImageView\ImageViewdlg.h
+Ln# 0064 		GetModuleFileName( NULL, m_sAppPath.GetBuffer(MAX_PATH+1), MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\ImageView\ImageViewdlg.h
+Ln# 0130 		CImageTypeKey( ImageType typ) : size( MAX_PATH)
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\ImageView\ImageViewdlg.h
+Ln# 0251 		::GetModuleFileName( NULL, m_sAppPath.GetBuffer( MAX_PATH + 1), MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\ImageView\ImageViewdlg.h
+Ln# 0262 			::GetModuleFileName( NULL, m_sAppPath.GetBuffer( MAX_PATH + 1), MAX_PATH);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\MTPad\mainfrm.h
+Ln# 0350 		TCHAR szFile[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\MTPad\MTPad.h
+Ln# 0035 			TCHAR szPathName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\MTPad\MTPad.h
+Ln# 0038 			::GetFullPathName(lpstrCmd, MAX_PATH, szPathName, &lpstrFileName);
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\MTPad\view.h
+Ln# 0024 	TCHAR m_strFilePath[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\MTPad\view.h
+Ln# 0025 	TCHAR m_strFileName[MAX_PATH];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\MTPad\view.h
+Ln# 0490 		TCHAR szBuff[MAX_PATH + 30];
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\Wizard97Test\Wizard\FolderDialogStatusText.h
+Ln# 0097 			TCHAR sNewFolder[MAX_PATH+1] = {0};
+C:\Program Files\Microsoft Visual Studio\VC98\WTL75\Samples\WTLExplorer\mainfrm.h
+Ln# 0095 	TCHAR m_szListViewBuffer[MAX_PATH];

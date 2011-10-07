@@ -1,0 +1,344 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\snapscreen.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\snapscreen.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      MOVEABLE PURE   "res\\Master.manifest"
+IDR_241                 24      DISCARDABLE     "res\\Master.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 snapscreen"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "snapscreen 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_SNAPSCREEN_DIALOG DIALOGEX 0, 0, 242, 267
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_STATICEDGE | WS_EX_APPWINDOW
+CAPTION "SnapScreen"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "隐藏窗口",ID_MINIZE,130,235,50,14
+    PUSHBUTTON      "退出",IDCANCEL,183,235,50,14
+    GROUPBOX        "",IDC_STATIC,7,17,228,150
+    LTEXT           "和风工作室",IDC_STATIC,8,8,42,11
+    LTEXT           "欢迎使用和风截图软件，使用方法：",IDC_STATIC,25,43,175,
+                    14
+    LTEXT           "",IDC_STATIC_HOTKEY,26,60,127,17
+    LTEXT           "2.拖动鼠标截取屏幕，双击确定。",IDC_STATIC,26,81,127,17
+    LTEXT           "3.若要取消，可按下右键或者ESC键。",IDC_STATIC,26,104,
+                    148,17
+    CONTROL         "保存至粘贴板(必选)",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,27,148,91,17
+    CONTROL         "立即编辑截图",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,148,61,17
+    LTEXT           "设置截图操作：",IDC_STATIC,25,130,93,11
+    PUSHBUTTON      "联系我们",IDC_WEB_URL,9,235,50,14
+    DEFPUSHBUTTON   "截屏",ID_SNAP,77,235,50,14
+    DEFPUSHBUTTON   "设置",ID_SET_HOTKEY,157,57,50,14
+    GROUPBOX        "注册功能",IDC_STATIC,7,171,228,38
+    PUSHBUTTON      "定时截屏",IDC_BUTTON_TIMERSNAP,130,185,50,14,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "持续截屏",IDC_BUTTON_CONTINUESNAP,183,185,50,14,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "注册",IDC_BUTTON_MAINREGISTER,9,185,50,14,0,
+                    WS_EX_STATICEDGE
+    GROUPBOX        "免费功能",IDC_STATIC,7,218,228,40
+    PUSHBUTTON      "全屏",IDC_BUTTON_WHOLESCREEN,77,185,50,14,0,
+                    WS_EX_STATICEDGE
+END
+
+IDD_DIALOG_REGISTER DIALOGEX 0, 0, 222, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "注册"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_SRC,57,69,162,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_OEMCONVERT | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_DST,57,88,153,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "注册",IDC_BUTTON_GOREGISTER,89,110,53,14,0,
+                    WS_EX_STATICEDGE
+    LTEXT           "软件没注册，使用前请先注册",IDC_STATIC,11,8,192,12
+    LTEXT           "费用:20元，一年内有效。",IDC_STATIC,28,22,192,12
+    LTEXT           "支持支付宝和财付通付费，或者联系QQ:",IDC_STATIC,28,37,
+                    142,12
+    LTEXT           "支付时请将下面标识加入备注说明中",IDC_STATIC,10,53,129,
+                    12
+    LTEXT           "机器标识：",IDC_STATIC,10,69,46,9
+    LTEXT           "注册码：",IDC_STATIC,10,90,38,9
+    PUSHBUTTON      "支付",IDC_BUTTON_PAY,31,110,53,14,0,WS_EX_STATICEDGE
+    EDITTEXT        IDC_EDIT_QQ,167,37,45,13,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    PUSHBUTTON      "联系作者",IDC_BUTTON_CALLME,149,110,53,14,0,
+                    WS_EX_STATICEDGE
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 138, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "对话"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,30,49,50,10
+    PUSHBUTTON      "取消",IDCANCEL,80,49,50,10
+    LTEXT           "请输入热键",IDC_STATIC,23,21,42,9
+    EDITTEXT        IDC_EDIT1,68,19,52,12,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_TIMERSNAP_SET DIALOG DISCARDABLE  0, 0, 171, 183
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "定时截屏设置"
+FONT 10, "System"
+BEGIN
+    COMBOBOX        IDC_COMBO_PINGLV,66,75,34,76,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "频率(秒):",IDC_STATIC,32,76,34,11
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,37,35,61,10
+    GROUPBOX        "选择截屏方式",IDC_STATIC,15,7,144,105
+    CONTROL         "每天重复时间",IDC_CHECK_SPTIME,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,19,95,13
+    CONTROL         "开机后截屏(需要设置为开机运行)",IDC_CHECK_START,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,26,55,129,11
+    CONTROL         "自动运行",IDC_CHECK_AUTORUN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,42,88,47,17
+    EDITTEXT        IDC_EDIT_PATH,18,136,84,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "选择",IDC_BUTTON_GETPATH,111,134,39,18
+    PUSHBUTTON      "确定",IDOK,18,162,44,14
+    PUSHBUTTON      "取消",IDCANCEL,80,162,48,14
+    LTEXT           "屏幕文件保存位置",IDC_STATIC,17,119,94,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "snapscreen Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "snapscreen\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "snapscreen.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "snapscreen 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SNAPSCREEN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 260
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 131
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_DIALOG_TIMERSNAP_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 164
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_WEB_URL             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_TIMERSNAP_SET DLGINIT
+BEGIN
+    IDC_COMBO_PINGLV, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_PINGLV, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_COMBO_PINGLV, 0x403, 3, 0
+0x3033, "\000" 
+    IDC_COMBO_PINGLV, 0x403, 3, 0
+0x3036, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 snapscreen(&A)..."
+END
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\snapscreen.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
