@@ -6,6 +6,7 @@
 #include <windows.h>
 
 #include "../../cximage600_full/CxImage/ximage.h"
+#include "../../include/tinyxml/tinyxml.h"
 
 typedef unsigned char byte;
 
@@ -42,16 +43,38 @@ void Screen(char filename[])
 	DeleteDC(hScrDC);
 }
 
+typedef struct tgConfig
+{
+	int type ;
+	int speTime ;
+	int pinglv ;
+	int autoRun ;
+	char filePath[MAX_PATH] ;
+}Config ;
+
+Config typeEveryDAy ;
+Config typeAutoRun ;
+
 int loadconfig(const char* filepath)
 {
 	if ( NULL == filepath) {
-		
+		return -1 ;	
 	}
+
+	TiXmlDocument doc ;
+	doc.Parse(filepath) ;
+	if ( doc.Error() )
+	{
+		return -1;
+	}
+
+	TiXmlElement 
+
 	return 0 ;
 }
 
 int main(int argc, char* argv[])
 {
-
+	
 	return 0;
 }
