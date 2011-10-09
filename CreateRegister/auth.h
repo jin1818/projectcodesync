@@ -136,7 +136,15 @@ inline CString getNewSrcCode(const int useTimes)
 	getMAC(mac) ;
 	CString timeStr ;
 	timeStr.Format("%ul-%-d-%05d" , SDBMHash(mac) , t , useTimes) ;
+	CString filePath = getRegisterFile() ;
+	AuthStruct auth ;
+	memset(&auth, 0 , sizeof(auth)) ;
+	memcpy(auth.src , (void *)timeStr.GetBuffer(0) , sizeof(auth.src)) ;
+	FILE* fp = fopen (filePath , "wb") ;
+	fwrite(&auth , 1 , sizeof(auth) , fp) ;
+	fclose(fp) ;
 	return timeStr ;
+
 }
 
 
@@ -160,15 +168,6 @@ inline CString getSrcCode(const int useTimes) {
 			if (strlen(auth.dst) > 0) 
 			{
 				CString timeStr = getNewSrcCode(useTimes) ;
-				memset(&auth, 0 , sizeof(auth)) ;
-				memcpy(auth.src , (void *)timeStr.GetBuffer(0) , sizeof(auth.src)) ;
-		
-				fp = fopen (filePath , "wb") ;
-				if ( NULL == fp ) {
-					return "" ;
-				}
-				fwrite(&auth , 1 , sizeof(auth) , fp) ;
-				fclose(fp) ;
 				return timeStr ;	
 			}
 			else 

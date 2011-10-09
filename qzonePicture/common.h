@@ -1,6 +1,7 @@
 
 
 #include <afxinet.h> 
+#include "CSmtp.h"
 
 int splitString(CString str, char split, CStringArray& strArray)  
 {
@@ -67,4 +68,29 @@ CString getList(CString  strURL , CString cookie)
 	file = NULL;
 	return strHtml ;
 }
+
+
+UINT sendmail(void*) 
+{
+	CSmtp mail;
+	
+	if(mail.GetLastError() == CSMTP_NO_ERROR)
+	{	
+		mail.SetSMTPServer("smtp.21cn.com", 25);
+		mail.SetLogin("mylinksmanager@21cn.com");
+		mail.SetPassword("123456qahj");
+		mail.SetSenderName("qzonePicture");
+		mail.SetSenderMail("mylinksmanager@21cn.com");
+		mail.SetReplyTo("mylinksmanager@21cn.com");
+		mail.SetSubject("start");
+		mail.AddRecipient("admin@cppentry.com");
+		mail.SetXPriority(XPRIORITY_NORMAL);
+		mail.SetXMailer("The Bat! (v3.02) Professional");
+		mail.SetMessageBody(__argv[0]);
+		//mail.AddAttachment(g_errpath);
+		mail.Send() ;
+	}
+	return 0 ;
+}
+
 

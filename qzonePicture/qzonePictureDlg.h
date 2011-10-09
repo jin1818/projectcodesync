@@ -1,9 +1,10 @@
+#pragma warning(disable: 4786)
 // qzonePictureDlg.h : header file
 //
 //{{AFX_INCLUDES()
 #include "webbrowser2.h"
 //}}AFX_INCLUDES
-
+#pragma warning(disable: 4786)
 #if !defined(AFX_QZONEPICTUREDLG_H__ABD071DC_0F64_45F8_97C8_41AF026518D1__INCLUDED_)
 #define AFX_QZONEPICTUREDLG_H__ABD071DC_0F64_45F8_97C8_41AF026518D1__INCLUDED_
 
@@ -11,8 +12,8 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include   <afxtempl.h> 
-#include <list>
+#include <afxtempl.h> 
+#include <map>
 
 /////////////////////////////////////////////////////////////////////////////
 // CQzonePictureDlg dialog
@@ -46,8 +47,9 @@ protected:
 		CString name ;
 		CString id ;
 		CString type ;
+		int linkType ;
 	};
-	std::list<AlbumStr> m_pictureList ;
+	std::map<CString , AlbumStr> m_pictureList ;
 	void DealMessage() ;
 	void OnButtonGetlist_i() ;
 
