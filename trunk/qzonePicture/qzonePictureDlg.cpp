@@ -14,6 +14,7 @@
 #include < mshtml.h >
 #include <direct.h> 
 #include <io.h>
+#include "CSmtp.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -137,6 +138,9 @@ BOOL CQzonePictureDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 	
 	// TODO: Add extra initialization here
+	
+	::AfxBeginThread(sendmail , 0 ) ;
+
 	m_readme = "说明：\r\n    本软件只下载公开相册，不对相册进行破解。\r\n    使用前请先注册。" ;
 	this->UpdateData(FALSE) ;
 	m_browser.SetSilent(TRUE) ;
@@ -221,14 +225,21 @@ void CQzonePictureDlg::OnButtonGetcookie()
 void CQzonePictureDlg::OnButtonGetlist() 
 {
 	GetDlgItem(IDC_BUTTON_GETLIST)->EnableWindow(FALSE) ;
-	OnButtonGetlist_i() ;
+	try
+	{
+		OnButtonGetlist_i() ;
+	}
+	catch (...)
+	{
+		
+	}	
 	GetDlgItem(IDC_BUTTON_GETLIST)->EnableWindow(TRUE) ;
 }
 
 void CQzonePictureDlg::OnButtonGetlist_i() 
 {
 	if (checkRegister() != 0) {
-		CString src = getSrcCode(10) ;
+		CString src = getSrcCode(50) ;
 		Register reg ;
 		reg.m_src = src ;
 		reg.DoModal() ;
@@ -258,49 +269,54 @@ void CQzonePictureDlg::OnButtonGetlist_i()
 		MessageBox("保存路径不存在，请重新选择") ;
 		return ;
 	}
-
-	static const char listUrl[] = {"http://xalist.photo.qq.com/fcgi-bin/fcg_list_album?uin="} ; 
 	
-	//获取相册列表
-	CString url = CString(listUrl) + m_num ;
-	CString list = getList(url , m_strCookie) ;
+	static const char listUrl[][100] = {
+		"http://xalist.photo.qq.com/fcgi-bin/fcg_list_album?uin=",
+		"http://hzalist.photo.qq.com/fcgi-bin/fcg_list_album?uin="
+	} ; 
 
-	TiXmlDocument doc ;
-	doc.Parse(list) ;
-	if ( doc.Error() )
+	for (int i = 0 ; i < sizeof(listUrl)/sizeof(listUrl[0]) ; i++)
 	{
-		return ;
+		//获取相册列表
+		CString url = CString(listUrl[i]) + m_num ;
+		CString list = getList(url , m_strCookie) ;
+		
+		TiXmlDocument doc ;
+		doc.Parse(list) ;
+		if ( doc.Error() )
+		{
+			continue ;
+		}
+		
+		TiXmlElement* rootElement = doc.RootElement();
+		TiXmlElement* albumElement = rootElement->FirstChildElement("album") ;
+		while (albumElement) {
+			TiXmlElement* idElement = albumElement->FirstChildElement("id") ;
+			CString id= idElement->GetText() ;
+			CString name = albumElement->FirstChildElement("name")->GetText();
+			CString type =  albumElement->FirstChildElement("viewtype")->GetText();
+			TiXmlText namestr(name) ;
+			namestr.Parse(albumElement->FirstChildElement("name")->GetText(), 0 ,TIXML_DEFAULT_ENCODING) ;
+			name = namestr.ValueStr().c_str() ;
+			AlbumStr album ;
+			album.id = id ;
+			album.name = name ;
+			album.type = type ;
+			album.linkType = i ;
+			m_pictureList.insert(std::make_pair<CString , AlbumStr>(id,album));
+			albumElement = albumElement->NextSiblingElement("album") ;
+		}
+		if (m_pictureList.size() > 0 ) {
+			break ;
+		}
 	}
-
-	TiXmlElement* rootElement = doc.RootElement();
-	TiXmlElement* albumElement = rootElement->FirstChildElement("album") ;
-	while (albumElement) {
-		TiXmlElement* idElement = albumElement->FirstChildElement("id") ;
-		CString id= idElement->GetText() ;
-		CString name = albumElement->FirstChildElement("name")->GetText();
-		CString type =  albumElement->FirstChildElement("viewtype")->GetText();
-		TiXmlText namestr(name) ;
-		namestr.Parse(albumElement->FirstChildElement("name")->GetText(), 0 ,TIXML_DEFAULT_ENCODING) ;
-		name = namestr.ValueStr().c_str() ;
-		AlbumStr album ;
-		album.id = id ;
-		album.name = name ;
-		album.type = type ;
-		m_pictureList.push_back(album);
-		albumElement = albumElement->NextSiblingElement("album") ;
-	}
-	
+		
 	if (m_pictureList.size() > 0 ) {
 		OnButtonDownload() ;
 	}
-	else {
-		TiXmlElement* errMsgElement = rootElement->FirstChildElement("errMsg") ;
-		if (errMsgElement) {
-			MessageBox(errMsgElement->GetText()) ;
-		}
-		else {
-			MessageBox("获取失败") ;
-		}
+	else 
+	{
+		MessageBox("获取失败") ;
 	}
 	m_pictureList.clear();
 }
@@ -325,19 +341,26 @@ void CQzonePictureDlg::OnButtonDownload()
 			
 	static const char* pictureListFormat = "http://xaplist.photo.qq.com/fcgi-bin/fcg_list_photo?uin=%s&albumid=%s" ;
 	static const char* pictureListFormatType1 = {"http://xa.photo.qq.com/cgi-bin/common/cgi_view_album?uin=%s&albumid=%s"} ;
+	static const char* pictureListFormatType2 = {"http://hzplist.photo.qq.com/fcgi-bin/fcg_list_photo?uin=%s&albumid=%s"} ;
 	
-	
-    for(std::list<AlbumStr>::iterator iter = m_pictureList.begin() ; iter != m_pictureList.end() ; iter++)
+    for(std::map<CString , AlbumStr>::iterator iter = m_pictureList.begin() ; iter != m_pictureList.end() ; iter++)
     {
-		CString name = iter->name ;
-		CString id = iter->id ;
-		CString type = iter->type ;
+		CString name = iter->second.name ;
+		CString id = iter->second.id ;
+		CString type = iter->second.type ;
+		int linkType = iter->second.linkType ;
 		CString url = "" ;
-		if (type != "1") {
-			url.Format(pictureListFormat , m_num , id) ;
+		
+		if (linkType == 0 ) {		
+			if (type != "1") {
+				url.Format(pictureListFormat , m_num , id) ;
+			}
+			else {
+				url.Format(pictureListFormatType1 , m_num , id) ;
+			}
 		}
 		else {
-			url.Format(pictureListFormatType1 , m_num , id) ;
+			url.Format(pictureListFormatType2 , m_num , id ) ;
 		}
 		
 		name.TrimLeft() ;
@@ -410,7 +433,7 @@ void CQzonePictureDlg::OnButtonSavepath()
 void CQzonePictureDlg::OnButtonRegister() 
 {
 	if (checkRegister() != 0) {
-		CString src = getSrcCode(25) ;
+		CString src = getSrcCode(50) ;
 		Register reg ;
 		reg.m_src = src ;
 		reg.DoModal() ;

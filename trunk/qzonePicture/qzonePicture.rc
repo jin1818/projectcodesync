@@ -126,7 +126,7 @@ BEGIN
                     WS_EX_STATICEDGE
     LTEXT           "软件没注册或已超出使用次数和使用时间",IDC_STATIC,11,8,
                     192,12
-    LTEXT           "费用:20元，使用25次，长期有效。",IDC_STATIC,28,22,192,
+    LTEXT           "费用:20元，使用50次，长期有效。",IDC_STATIC,28,22,192,
                     12
     LTEXT           "支持支付宝和财付通付费，或者联系QQ:",IDC_STATIC,28,37,
                     142,12
