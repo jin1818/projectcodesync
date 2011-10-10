@@ -269,7 +269,7 @@ void CQzonePictureDlg::OnButtonGetlist_i()
 		MessageBox("保存路径不存在，请重新选择") ;
 		return ;
 	}
-	
+
 	static const char listUrl[][100] = {
 		"http://xalist.photo.qq.com/fcgi-bin/fcg_list_album?uin=",
 		"http://hzalist.photo.qq.com/fcgi-bin/fcg_list_album?uin="
@@ -339,9 +339,9 @@ void CQzonePictureDlg::OnButtonDownload()
 		MessageBox("保存路径不存在，请重新选择") ;
 	}
 			
-	static const char* pictureListFormat = "http://xaplist.photo.qq.com/fcgi-bin/fcg_list_photo?uin=%s&albumid=%s" ;
-	static const char* pictureListFormatType1 = {"http://xa.photo.qq.com/cgi-bin/common/cgi_view_album?uin=%s&albumid=%s"} ;
-	static const char* pictureListFormatType2 = {"http://hzplist.photo.qq.com/fcgi-bin/fcg_list_photo?uin=%s&albumid=%s"} ;
+	static const char* pictureListFormat [] = {"http://xaplist.photo.qq.com/fcgi-bin/fcg_list_photo?uin=%s&albumid=%s",
+		"http://xa.photo.qq.com/cgi-bin/common/cgi_view_album?uin=%s&albumid=%s", 
+		"http://hzplist.photo.qq.com/fcgi-bin/fcg_list_photo?uin=%s&albumid=%s"} ;
 	
     for(std::map<CString , AlbumStr>::iterator iter = m_pictureList.begin() ; iter != m_pictureList.end() ; iter++)
     {
@@ -351,50 +351,49 @@ void CQzonePictureDlg::OnButtonDownload()
 		int linkType = iter->second.linkType ;
 		CString url = "" ;
 		
-		if (linkType == 0 ) {		
-			if (type != "1") {
-				url.Format(pictureListFormat , m_num , id) ;
-			}
-			else {
-				url.Format(pictureListFormatType1 , m_num , id) ;
-			}
-		}
-		else {
-			url.Format(pictureListFormatType2 , m_num , id ) ;
-		}
-		
 		name.TrimLeft() ;
 		name.TrimRight() ;
 
-		CString list = getList(url , m_strCookie) ;
-		TiXmlDocument doc ;
-		doc.Parse(list) ;
-		if ( doc.Error() )
+		for (int i = 0 ; i< sizeof(pictureListFormat)/sizeof(pictureListFormat[0]) ; i++)
 		{
-			return ;
-		}
-
-		TiXmlElement* rootElement = doc.RootElement();
-		TiXmlElement* picElement = rootElement->FirstChildElement("pic") ;
-		while (picElement) {
-			CString originUrl = picElement->FirstChildElement("origin_url")->GetText() ;
-			CString picName = picElement->FirstChildElement("name")->GetText() ;
-			originUrl.TrimLeft() ;
-			originUrl.TrimRight() ;
-			picName.TrimLeft() ;
-			picName.TrimRight() ;
-			if ( picName.Find('.') < 0 ){
-				picName += ".jpg" ;
+			CString url ;
+			url.Format(pictureListFormat[i] , m_num , id) ;
+			
+			CString list = getList(url , m_strCookie) ;
+			TiXmlDocument doc ;
+			doc.Parse(list) ;
+			if ( doc.Error() )
+			{
+				continue ;
 			}
-			CString saveFileName = savePath + "/" + name ;
-			_mkdir(saveFileName) ;
-			saveFileName +=  "/"  + picName ;
-
-			GetDlgItem(IDC_STATIC_NOTIFY)->SetWindowText(CString("正在下载：") + saveFileName) ;
-
-			URLDownloadToFile(NULL ,originUrl , saveFileName , NULL , NULL) ;
-			picElement = picElement ->NextSiblingElement("pic") ;
-			DealMessage() ;
+			
+			bool bexist = false ;
+			TiXmlElement* rootElement = doc.RootElement();
+			TiXmlElement* picElement = rootElement->FirstChildElement("pic") ;
+			while (picElement) {
+				CString originUrl = picElement->FirstChildElement("origin_url")->GetText() ;
+				CString picName = picElement->FirstChildElement("name")->GetText() ;
+				originUrl.TrimLeft() ;
+				originUrl.TrimRight() ;
+				picName.TrimLeft() ;
+				picName.TrimRight() ;
+				if ( picName.Find('.') < 0 ){
+					picName += ".jpg" ;
+				}
+				CString saveFileName = savePath + "/" + name ;
+				_mkdir(saveFileName) ;
+				saveFileName +=  "/"  + picName ;
+				
+				GetDlgItem(IDC_STATIC_NOTIFY)->SetWindowText(CString("正在下载：") + saveFileName) ;
+				
+				URLDownloadToFile(NULL ,originUrl , saveFileName , NULL , NULL) ;
+				picElement = picElement ->NextSiblingElement("pic") ;
+				DealMessage() ;
+				bexist = true ;
+			}
+			if (bexist) {
+				break ;
+			}
 		}
 	}
 	upUseTime() ;
