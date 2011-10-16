@@ -238,14 +238,10 @@ void CQzonePictureDlg::OnButtonGetlist()
 
 void CQzonePictureDlg::OnButtonGetlist_i() 
 {
+	bool IsRegist = true ;
 	if (checkRegister() != 0) {
-		CString src = getSrcCode(50) ;
-		Register reg ;
-		reg.m_src = src ;
-		reg.DoModal() ;
-		if (checkRegister()!=0){
-			return ;
-		}
+		MessageBox("试用版只能下载1个相册") ;
+		IsRegist = false ;
 	}
 
 	this->UpdateData() ;
@@ -305,6 +301,9 @@ void CQzonePictureDlg::OnButtonGetlist_i()
 			album.linkType = i ;
 			m_pictureList.insert(std::make_pair<CString , AlbumStr>(id,album));
 			albumElement = albumElement->NextSiblingElement("album") ;
+			if (!IsRegist) {
+				break ;
+			}
 		}
 		if (m_pictureList.size() > 0 ) {
 			break ;
