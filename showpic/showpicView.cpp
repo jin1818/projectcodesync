@@ -69,12 +69,6 @@ void CShowpicView::OnInitialUpdate()
 	Navigate2(_T("I:\\ÎâÓîº½\\ÎâÓîº½Ïà²á\\Í¼Æ¬\\·ç¾°±ÚÖ½\\001.jpg"),NULL,NULL);
 }
 
-HRESULT CShowpicView::OnGetHostInfo(DOCHOSTUIINFO *pInfo)
-{
-	pInfo->dwFlags |= DOCHOSTUIFLAG_SCROLL_NO | DOCHOSTUIFLAG_NO3DBORDER;
-	return S_OK;
-}
-
 
 /////////////////////////////////////////////////////////////////////////////
 // CShowpicView printing

@@ -19,7 +19,6 @@ protected: // create from serialization only
 // Attributes
 public:
 	CShowpicDoc* GetDocument();
-	virtual HRESULT OnGetHostInfo(DOCHOSTUIINFO *pInfo);
 
 
 // Operations
